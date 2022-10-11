@@ -5,12 +5,15 @@ services:
     volumes:
       - ./nginx:/etc/nginx/conf.d
       - ./nginx/logs:/var/log/nginx
+    ports:
+      - 80:80
   api:
     build: ./app
     volumes:
       - ./app/src:/app/src
       - api_modules:/app/node_modules
-    command: npm test
+    environment:
+      - PORT=3000
     depends_on:
       - nginx
 volumes:
