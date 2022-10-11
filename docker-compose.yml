@@ -1,0 +1,15 @@
+version: "3"
+services:
+  nginx:
+    image: nginx:alpine
+    volumes:
+      - ./nginx:/etc/nginx/conf.d/
+  api:
+    build: ./app
+    volumes:
+      - ./app/src:/app/src
+      - api_modules:/app/node_modules
+    depends_on:
+      - nginx
+volumes:
+  api_modules:
