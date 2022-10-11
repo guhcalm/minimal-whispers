@@ -1,8 +1,8 @@
 on:
   push:
-    branches: ["*"],
+    branches: "vanilla-api"
   pull_request:
-    branches: ["*"],
+    branches: "vanilla-api"
 name: 🚀 push & pull
 jobs:
   pipeline:
@@ -10,6 +10,10 @@ jobs:
     steps:
       - name: 🛸 Sync files
         uses: actions/Checkout@v2
+      - name: 👽 Install Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18
       - name: 🧪 Test
         run: npm test
       - name: 💅 Lint
