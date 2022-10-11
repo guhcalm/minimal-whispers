@@ -3,7 +3,8 @@ services:
   nginx:
     image: nginx:alpine
     volumes:
-      - ./nginx:/etc/nginx/conf.d/
+      - ./nginx:/etc/nginx/conf.d
+      - ./nginx/logs:/var/log/nginx
   api:
     build: ./app
     volumes:
