@@ -1,9 +1,9 @@
-import { createServer } from "node:http"
+import { createServer as api } from "node:http"
 const { stringify } = JSON
 
 const { PORT = 3000 } = process.env
 
-createServer(({ method, url }, res) => {
+api(({ method, url }, res) => {
   res
     .setHeader("content-type", "application/json")
     .setHeader("access-controll-allow-origin", "*")
