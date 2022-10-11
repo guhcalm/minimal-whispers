@@ -9,7 +9,9 @@ jobs:
     runs_on: ubuntu-latest
     steps:
       - name: 🛸 Sync files
-        uses: actions/Checkout@v2
+        uses: actions/checkout@v2
+      - name: 👽 Install Node
+        uses: actions/setup-node@v1
       - name: 🧪 Test
         run: npm test
       - name: 💅 Lint
