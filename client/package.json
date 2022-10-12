@@ -12,7 +12,8 @@
       "echo Test",
       "vitest run --passWithNoTests",
       "echo Lint",
-      "prettier --write && eslint --fix"
+      "prettier --write",
+      "eslint --fix"
     ]
   },
   "dependencies": {
