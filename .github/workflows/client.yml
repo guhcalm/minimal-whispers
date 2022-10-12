@@ -1,8 +1,8 @@
 on:
   push:
-    branches: ["*"],
+    branches: ["vite"],
   pull_request:
-    branches: ["*"],
+    branches: ["vite"],
 name: 🚀 push & pull
 jobs:
   pipeline:
